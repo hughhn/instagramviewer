@@ -8,5 +8,8 @@
     <string name="caption_default_text">No caption</string>
     <string name="username_label">User name</string>
     <string name="likes_count_label">Likes</string>
+    <string name="comment1_label">comment 1</string>
+    <string name="comment2_label">comment 2</string>
+    <string name="timestamp_label">time</string>
 
 </resources>

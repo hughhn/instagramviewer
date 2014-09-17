@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_margin="0dp"
         android:adjustViewBounds="true"
-        android:padding="0dp"
+        android:padding="10dp"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_launcher" />
 
@@ -25,6 +25,17 @@
         android:gravity="center"
         android:padding="0dp"
         android:text="@string/username_label" />
+    
+    <TextView
+        android:id="@+id/tvCreatedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="0dp"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="@string/timestamp_label" />
 
     <ImageView
         android:id="@+id/imgPhoto"
@@ -33,9 +44,9 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/imgAvatar"
         android:layout_margin="0dp"
-        android:padding="0dp"
-        android:background="#000"
         android:adjustViewBounds="true"
+        android:background="#000"
+        android:padding="0dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_launcher" />
 
@@ -46,9 +57,9 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/imgPhoto"
         android:layout_margin="0dp"
-        android:padding="2dp"
         android:adjustViewBounds="true"
         android:background="#fff"
+        android:padding="2dp"
         android:scaleType="fitCenter"
         android:src="@drawable/favorite" />
 
@@ -71,5 +82,25 @@
         android:ellipsize="end"
         android:maxLines="3"
         android:text="@string/caption_default_text" />
+
+    <TextView
+        android:id="@+id/tvComment1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvCaption"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="@string/comment1_label" />
+
+    <TextView
+        android:id="@+id/tvComment2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvComment1"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:text="@string/comment2_label" />
 
 </RelativeLayout>
