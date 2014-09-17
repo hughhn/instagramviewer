@@ -87,48 +87,7 @@ public class PhotosActivity extends Activity {
 				try {
 					photosJSON = response.getJSONArray("data");
 					for (int i = 0; i < photosJSON.length(); i++) {
-						JSONArray commentsJSON = null;
-
-						JSONObject photoJSON = photosJSON.getJSONObject(i);
-						InstagramPhoto photo = new InstagramPhoto();
-						photo.username = photoJSON.getJSONObject("user")
-								.getString("username");
-						photo.profileImgUrl = photoJSON.getJSONObject("user")
-								.getString("profile_picture");
-						if (photoJSON.optJSONObject("caption") != null) {
-							photo.caption = photoJSON.getJSONObject("caption")
-									.getString("text");
-						}
-						photo.imageUrl = photoJSON.getJSONObject("images")
-								.getJSONObject("standard_resolution")
-								.getString("url");
-						photo.imageHeight = photoJSON.getJSONObject("images")
-								.getJSONObject("standard_resolution")
-								.getInt("height");
-						photo.imageWidth = photoJSON.getJSONObject("images")
-								.getJSONObject("standard_resolution")
-								.getInt("width");
-						photo.likes_count = photoJSON.getJSONObject("likes")
-								.getInt("count");
-						photo.created_time =  photoJSON.getLong("created_time");
-
-						commentsJSON = photoJSON.getJSONObject("comments")
-								.getJSONArray("data");
-						if (commentsJSON != null) {
-							photo.comments = new ArrayList<PhotoComment>();
-
-							for (int j = 0; j < commentsJSON.length(); j++) {
-								JSONObject comment = commentsJSON
-										.getJSONObject(j);
-								PhotoComment cmt = new PhotoComment();
-								cmt.text = comment.getString("text");
-								cmt.username = comment.getJSONObject("from")
-										.getString("username");
-								cmt.profileImgUrl = comment.getJSONObject(
-										"from").getString("profile_picture");
-								photo.comments.add(cmt);
-							}
-						}
+						InstagramPhoto photo = new InstagramPhoto(photosJSON.getJSONObject(i));
 						mPhotos.add(photo);
 					}
 
